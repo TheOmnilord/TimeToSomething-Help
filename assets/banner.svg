@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="300" viewBox="0 0 1024 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2c8194"/>
+      <stop offset="1" stop-color="#1c5a69"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="300" fill="url(#bg)"/>
+
+  <!-- ECHO (left) -->
+  <g>
+    <!-- body -->
+    <rect x="150" y="118" width="120" height="130" rx="20" fill="#14323b"/>
+    <!-- fabric dots -->
+    <g fill="#20505d">
+      <circle cx="180" cy="150" r="4"/><circle cx="210" cy="150" r="4"/><circle cx="240" cy="150" r="4"/>
+      <circle cx="180" cy="180" r="4"/><circle cx="210" cy="180" r="4"/><circle cx="240" cy="180" r="4"/>
+      <circle cx="180" cy="210" r="4"/><circle cx="210" cy="210" r="4"/><circle cx="240" cy="210" r="4"/>
+    </g>
+    <!-- top with light ring -->
+    <ellipse cx="210" cy="118" rx="60" ry="17" fill="#1d454f"/>
+    <ellipse cx="210" cy="118" rx="38" ry="10" fill="none" stroke="#63d6e6" stroke-width="5"/>
+    <!-- sound waves -->
+    <g fill="none" stroke="#8fe6f2" stroke-linecap="round">
+      <path d="M 300 150 Q 330 183 300 216" stroke-width="7" opacity="0.9"/>
+      <path d="M 330 133 Q 378 183 330 233" stroke-width="7" opacity="0.6"/>
+      <path d="M 360 116 Q 426 183 360 250" stroke-width="7" opacity="0.35"/>
+    </g>
+  </g>
+
+  <!-- DOORWAY + PERSON (right) -->
+  <g>
+    <!-- door frame -->
+    <rect x="640" y="60" width="200" height="200" rx="6" fill="#e9f6f8"/>
+    <rect x="662" y="82" width="156" height="178" fill="#123c46"/>
+    <!-- open door panel, swung inward -->
+    <path d="M 662 82 L 726 66 L 726 244 L 662 260 Z" fill="#cfeaee"/>
+    <path d="M 662 82 L 726 66 L 726 244 L 662 260 Z" fill="none" stroke="#a9d6dd" stroke-width="2"/>
+    <!-- warm light spilling through -->
+    <path d="M 726 82 L 818 82 L 818 260 L 726 260 Z" fill="#1a4b56"/>
+    <!-- walking person silhouette -->
+    <g fill="#f4fbfc">
+      <circle cx="762" cy="120" r="17"/>
+      <path d="M 762 138
+               L 776 176 L 792 210 L 780 216 L 762 184
+               L 762 210 L 772 252 L 760 252 L 748 210
+               L 744 176 L 748 150 Z"/>
+      <!-- forward arm -->
+      <path d="M 758 150 L 736 172 L 742 180 L 762 162 Z"/>
+    </g>
+  </g>
+</svg>

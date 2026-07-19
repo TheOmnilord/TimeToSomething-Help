@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time To Something — Help &amp; Setup</title>
     <meta name="description" content="Help and setup guide for the Time To Something Alexa skill: spoken countdown announcements toward departures and other events.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="alternate icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -17,6 +22,10 @@
             background: #fafafa;
         }
         h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
+        .banner { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 28px; }
+        .titlebar { display: flex; align-items: center; gap: 14px; }
+        .titlebar h1 { margin-bottom: 8px; }
+        .mark { width: 52px; height: 52px; border-radius: 12px; flex: none; }
         h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: #1a1a1a; }
         h3 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; color: #1a1a1a; }
         p { margin-bottom: 16px; }
@@ -91,7 +100,11 @@
 </head>
 <body>
 
-    <h1 id="top">Time To Something</h1>
+    <img class="banner" src="assets/banner.svg" alt="An Echo announcing while someone heads out the door">
+    <div class="titlebar">
+        <img class="mark" src="assets/icon.svg" alt="" width="52" height="52">
+        <h1 id="top">Time To Something</h1>
+    </div>
     <p class="updated">Help &amp; setup guide · updated July 2026</p>
 
     <p class="langnav">
