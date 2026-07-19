@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time To Something — Help &amp; Setup</title>
+    <meta name="description" content="Help and setup guide for the Time To Something Alexa skill: spoken countdown announcements toward departures and other events.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #fafafa;
+        }
+        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
+        h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: #1a1a1a; }
+        h3 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; color: #1a1a1a; }
+        p { margin-bottom: 16px; }
+        .updated { font-size: 14px; color: #888; margin-bottom: 24px; }
+        .summary {
+            background: #e8f4fd;
+            border-left: 4px solid #378ADD;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip {
+            background: #fff8e6;
+            border-left: 4px solid #e0a800;
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+        }
+        ul { margin-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; }
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #888;
+        }
+        a { color: #378ADD; }
+        strong { color: #1a1a1a; }
+        code {
+            font-family: 'SF Mono', Menlo, Consolas, monospace;
+            font-size: 0.9em;
+            background: #eef1f4;
+            padding: 2px 7px;
+            border-radius: 4px;
+            color: #1a1a1a;
+        }
+        .say { display: block; margin: 6px 0; }
+        .say code { background: #eaf4fb; }
+        .langnav {
+            font-size: 14px;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .langnav a { margin-right: 14px; }
+        .steps { counter-reset: step; list-style: none; margin-left: 0; }
+        .steps li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 14px;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0; top: 0;
+            width: 26px; height: 26px;
+            background: #378ADD;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 14px; font-weight: 600;
+            display: flex; align-items: center; justify-content: center;
+        }
+        hr.langbreak {
+            border: none;
+            border-top: 3px solid #e6e6e6;
+            margin: 56px 0 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="top">Time To Something</h1>
+    <p class="updated">Help &amp; setup guide · updated July 2026</p>
+
+    <p class="langnav">
+        <strong>English</strong>
+        <a href="#deutsch">Deutsch</a>
+    </p>
+
+    <p class="summary">
+        <strong>In short:</strong> Tell the skill when something happens — a clock time
+        (&ldquo;at three thirty&rdquo;) or a duration (&ldquo;in ninety minutes&rdquo;) — and it
+        speaks a series of countdown announcements on your Echo, for example 60, 45, 30, 15 and 5
+        minutes before, plus a final &ldquo;it&rsquo;s time&rdquo;. The intervals and the wording
+        are yours to customize. It needs the <strong>Reminders</strong> permission, granted once
+        in the Alexa app.
+    </p>
+
+    <h2>What it does</h2>
+    <p>
+        &ldquo;Time To Something&rdquo; is a countdown announcer. The classic use is getting a
+        household out the door on time: you set a departure, and every so often Alexa says how long
+        is left — <em>&ldquo;Time to departure: 30 minutes&rdquo;</em> — ending with
+        <em>&ldquo;It&rsquo;s time! Departure — now!&rdquo;</em> But it works for anything with a
+        deadline: dinner, bedtime, catching the bus, the start of a meeting.
+    </p>
+    <p>
+        Each announcement is delivered as an Alexa <strong>reminder</strong>, so it plays at the
+        scheduled moment even though the skill isn&rsquo;t &ldquo;running&rdquo; in between.
+    </p>
+
+    <h2>First-time setup</h2>
+    <ol class="steps">
+        <li><strong>Enable the skill</strong> on the Amazon account your Echo devices are signed in to.</li>
+        <li>
+            <strong>Grant the Reminders permission.</strong> In the <strong>Alexa app</strong>:
+            More &rarr; Skills &amp; Games &rarr; Your Skills &rarr; <em>Time To Something</em>
+            &rarr; Settings &rarr; <em>Manage account permissions</em> &rarr; enable
+            <strong>Reminders</strong>. Until you do, every countdown replies with a permission
+            card instead of scheduling.
+        </li>
+        <li><strong>Try it:</strong> say <em>&ldquo;Alexa, ask time to something, we are leaving in ten minutes.&rdquo;</em></li>
+    </ol>
+
+    <h2>Hearing it in more than one room</h2>
+    <p>
+        By default a reminder is announced <strong>only on the Echo it was created on</strong>. To
+        hear the countdown throughout the house, set a <strong>device group for reminders</strong>
+        — once — in the Alexa app:
+    </p>
+    <ol class="steps">
+        <li>Open the <strong>Alexa app</strong> and go to <strong>Settings &rarr; Reminders</strong>.</li>
+        <li>Choose the devices (or a group) that should announce reminders.</li>
+        <li>That&rsquo;s it — start the countdown <strong>once</strong>, on any Echo, and every device in the group speaks it.</li>
+    </ol>
+    <p class="tip">
+        <strong>Do not</strong> start the countdown separately in each room. Every countdown you
+        start schedules its own set of reminders, and with a device group each set plays
+        <em>everywhere</em> — so two countdowns means hearing each announcement twice. Start it once
+        and let the group do the rest. (&ldquo;Cancel the countdown&rdquo; always clears every one
+        of them.)
+    </p>
+
+    <h2>Talking to the skill</h2>
+    <p>Two ways to begin:</p>
+    <ul>
+        <li><span class="say"><code>Alexa, ask time to something to&hellip;</code></span> followed by a command below.</li>
+        <li><span class="say"><code>Alexa, open time to something</code></span> — then just speak the command. Easier for longer phrases.</li>
+    </ul>
+
+    <h2>Starting a countdown</h2>
+    <p><strong>By clock time:</strong></p>
+    <span class="say"><code>we are leaving at three thirty</code></span>
+    <span class="say"><code>start a countdown to dinner at six</code></span>
+    <span class="say"><code>countdown to half past two</code></span>
+    <span class="say"><code>the meeting is at nine fifteen</code></span>
+
+    <p style="margin-top:16px;"><strong>By duration (how long from now):</strong></p>
+    <span class="say"><code>we are leaving in ninety minutes</code></span>
+    <span class="say"><code>start a countdown for forty five minutes</code></span>
+    <span class="say"><code>dinner is in two hours</code></span>
+    <span class="say"><code>we have forty minutes until the bus</code></span>
+
+    <p style="margin-top:16px;">
+        Or just say <code>start</code> and the skill will ask you for the time. Clock times and
+        durations are interchangeable, and any announcement points that already passed are dropped
+        automatically. Countdowns can be up to 24 hours ahead.
+    </p>
+
+    <h2>A single announcement (no countdown)</h2>
+    <p>For a one-off reminder rather than a whole series:</p>
+    <span class="say"><code>announce in thirty minutes</code></span>
+    <span class="say"><code>remind me in twenty minutes</code></span>
+    <span class="say"><code>in ten minutes say get in the car</code></span>
+    <span class="say"><code>say the bus is coming in fifteen minutes</code></span>
+
+    <h2>Customizing the schedule</h2>
+    <p>These save as your personal defaults for future countdowns.</p>
+    <span class="say"><code>use intervals sixty thirty ten and five</code></span>
+    <span class="say"><code>announce every fifteen minutes starting sixty minutes before</code></span>
+    <span class="say"><code>announce at thirty twenty and ten minutes before</code></span>
+    <p style="margin-top:12px;">
+        You can set up to 12 announcement points. Ask for more than fit and the skill keeps the
+        ones <strong>nearest the event</strong> and tells you it trimmed the list.
+    </p>
+
+    <h2>Customizing the words</h2>
+    <span class="say"><code>set the announcement to time to get moving</code></span>
+    <span class="say"><code>set the final announcement to everybody out the door</code></span>
+    <p style="margin-top:12px;">
+        For the countdown announcement, the minutes left are added automatically after your text.
+    </p>
+
+    <h2>Checking, cancelling, and settings</h2>
+    <span class="say"><code>status</code> &nbsp;·&nbsp; <code>how long is left</code> &nbsp;·&nbsp; <code>how long until dinner</code></span>
+    <span class="say"><code>cancel the countdown</code> &nbsp;·&nbsp; <code>stop the countdown</code></span>
+    <span class="say"><code>list my settings</code> &nbsp;·&nbsp; <code>reset my settings</code></span>
+
+    <h2>Tips</h2>
+    <ul>
+        <li>
+            <strong>Say &ldquo;ask&rdquo;, not &ldquo;tell&rdquo;, when using &ldquo;to&rdquo;.</strong>
+            <em>&ldquo;Alexa, ask time to something to announce in thirty minutes&rdquo;</em> works;
+            <em>&ldquo;tell&hellip; to&hellip;&rdquo;</em> confuses Alexa&rsquo;s phrasing. If in doubt,
+            open the skill first and then speak.
+        </li>
+        <li>
+            <strong>Event names are free-form.</strong> &ldquo;dinner&rdquo;, &ldquo;the bus&rdquo; and
+            &ldquo;the ferry&rdquo; all work — you are not limited to a fixed list.
+        </li>
+        <li>
+            <strong>Each announcement carries the Alexa reminder chime</strong> before it speaks —
+            that is how Alexa delivers scheduled speech to third-party skills.
+        </li>
+    </ul>
+
+    <h2>Defaults</h2>
+    <p>
+        If you never customize anything: announcements at <strong>60, 45, 30, 15 and 5</strong>
+        minutes before, plus a final one; event name &ldquo;departure&rdquo;; wording
+        &ldquo;Time to {event}: {minutes} minutes.&rdquo;
+    </p>
+
+
+    <hr class="langbreak" id="deutsch">
+
+
+    <h1>Time To Something</h1>
+    <p class="updated">Hilfe &amp; Einrichtung · aktualisiert Juli 2026</p>
+
+    <p class="langnav">
+        <a href="#top">English</a>
+        <strong>Deutsch</strong>
+    </p>
+
+    <p class="summary">
+        <strong>Kurz gesagt:</strong> Sag dem Skill, wann etwas ansteht — als Uhrzeit
+        (&ldquo;um fünfzehn Uhr dreißig&rdquo;) oder als Dauer (&ldquo;in neunzig Minuten&rdquo;) —
+        und er sagt auf deinem Echo einen Countdown an, zum Beispiel 60, 45, 30, 15 und 5 Minuten
+        vorher, plus eine finale Ansage. Intervalle und Text sind frei anpassbar. Er benötigt die
+        <strong>Erinnerungen</strong>-Berechtigung, die du einmalig in der Alexa-App erteilst.
+    </p>
+
+    <h2>Was der Skill macht</h2>
+    <p>
+        &ldquo;Time To Something&rdquo; sagt Countdowns an. Der Klassiker: die Familie rechtzeitig
+        aus dem Haus bekommen. Du legst eine Abfahrt fest, und Alexa sagt in Abständen, wie viel
+        Zeit bleibt — <em>&ldquo;Noch 30 Minuten — Abfahrt&rdquo;</em> — und zum Schluss
+        <em>&ldquo;Es ist soweit! Abfahrt — jetzt!&rdquo;</em> Funktioniert für alles mit einem
+        festen Zeitpunkt: Abendessen, Schlafenszeit, den Bus erwischen, Beginn eines Termins.
+    </p>
+    <p>
+        Jede Ansage wird als Alexa-<strong>Erinnerung</strong> zugestellt, spielt also zum geplanten
+        Zeitpunkt, auch wenn der Skill zwischendurch nicht &ldquo;läuft&rdquo;.
+    </p>
+
+    <h2>Erste Einrichtung</h2>
+    <ol class="steps">
+        <li><strong>Aktiviere den Skill</strong> mit dem Amazon-Konto, in dem deine Echo-Geräte angemeldet sind.</li>
+        <li>
+            <strong>Erteile die Erinnerungen-Berechtigung.</strong> In der <strong>Alexa-App</strong>:
+            Mehr &rarr; Skills &amp; Spiele &rarr; Deine Skills &rarr; <em>Time To Something</em>
+            &rarr; Einstellungen &rarr; <em>Kontoberechtigungen verwalten</em> &rarr;
+            <strong>Erinnerungen</strong> aktivieren. Ohne sie antwortet jeder Countdown mit einer
+            Berechtigungskarte, statt zu planen.
+        </li>
+        <li><strong>Probier es:</strong> sag <em>&ldquo;Alexa, frage time to something, wir fahren in zehn Minuten los.&rdquo;</em></li>
+    </ol>
+
+    <h2>Ansagen in mehreren Räumen</h2>
+    <p>
+        Standardmäßig wird eine Erinnerung <strong>nur auf dem Echo angesagt, auf dem sie erstellt
+        wurde</strong>. Damit der Countdown im ganzen Haus zu hören ist, lege — einmalig — eine
+        <strong>Gerätegruppe für Erinnerungen</strong> in der Alexa-App fest:
+    </p>
+    <ol class="steps">
+        <li>Öffne die <strong>Alexa-App</strong> und gehe zu <strong>Einstellungen &rarr; Erinnerungen</strong>.</li>
+        <li>Wähle die Geräte (oder eine Gruppe), die Erinnerungen ansagen sollen.</li>
+        <li>Fertig — starte den Countdown <strong>einmal</strong>, auf einem beliebigen Echo, und jedes Gerät der Gruppe sagt ihn an.</li>
+    </ol>
+    <p class="tip">
+        <strong>Starte den Countdown nicht</strong> in jedem Raum einzeln. Jeder gestartete
+        Countdown plant eigene Erinnerungen, und mit einer Gerätegruppe spielt jede davon
+        <em>überall</em> — zwei Countdowns bedeuten also jede Ansage doppelt. Einmal starten und die
+        Gruppe den Rest erledigen lassen. (&ldquo;Countdown abbrechen&rdquo; löscht immer alle.)
+    </p>
+
+    <h2>Mit dem Skill sprechen</h2>
+    <p>Zwei Wege zu beginnen:</p>
+    <ul>
+        <li><span class="say"><code>Alexa, frage time to something &hellip;</code></span> gefolgt von einem Befehl.</li>
+        <li><span class="say"><code>Alexa, öffne time to something</code></span> — dann einfach den Befehl sprechen. Praktischer für längere Sätze.</li>
+    </ul>
+
+    <h2>Einen Countdown starten</h2>
+    <p><strong>Per Uhrzeit:</strong></p>
+    <span class="say"><code>wir fahren um fünfzehn Uhr dreißig los</code></span>
+    <span class="say"><code>starte einen Countdown zum Abendessen um achtzehn Uhr</code></span>
+    <span class="say"><code>Countdown bis halb drei</code></span>
+
+    <p style="margin-top:16px;"><strong>Per Dauer (ab jetzt):</strong></p>
+    <span class="say"><code>wir fahren in neunzig Minuten los</code></span>
+    <span class="say"><code>starte einen Countdown für fünfundvierzig Minuten</code></span>
+    <span class="say"><code>das Abendessen ist in zwei Stunden</code></span>
+
+    <p style="margin-top:16px;">
+        Oder sag einfach <code>Start</code>, und der Skill fragt nach der Zeit. Uhrzeit und Dauer sind
+        austauschbar; bereits vergangene Ansagepunkte werden automatisch weggelassen. Countdowns
+        reichen bis 24 Stunden voraus.
+    </p>
+
+    <h2>Eine einzelne Ansage (kein Countdown)</h2>
+    <span class="say"><code>melde dich in dreißig Minuten</code></span>
+    <span class="say"><code>in zehn Minuten sag steigt ins Auto</code></span>
+    <span class="say"><code>sag der Bus kommt in fünfzehn Minuten</code></span>
+
+    <h2>Zeitplan anpassen</h2>
+    <p>Diese werden als deine persönlichen Standardwerte gespeichert.</p>
+    <span class="say"><code>nutze Intervalle sechzig dreißig zehn und fünf</code></span>
+    <span class="say"><code>melde dich alle fünfzehn Minuten ab sechzig Minuten vorher</code></span>
+    <p style="margin-top:12px;">
+        Bis zu 12 Ansagepunkte sind möglich. Bei zu vielen behält der Skill die dem Ereignis
+        <strong>nächsten</strong> und sagt dir, dass er gekürzt hat.
+    </p>
+
+    <h2>Text anpassen</h2>
+    <span class="say"><code>setze die Ansage auf Zeit loszukommen</code></span>
+    <span class="say"><code>setze die letzte Ansage auf alle raus jetzt</code></span>
+    <p style="margin-top:12px;">
+        Bei der Countdown-Ansage werden die verbleibenden Minuten automatisch an deinen Text angehängt.
+    </p>
+
+    <h2>Prüfen, abbrechen, Einstellungen</h2>
+    <span class="say"><code>Status</code> &nbsp;·&nbsp; <code>wie lange noch</code></span>
+    <span class="say"><code>Countdown abbrechen</code></span>
+    <span class="say"><code>liste meine Einstellungen auf</code> &nbsp;·&nbsp; <code>Einstellungen zurücksetzen</code></span>
+
+    <h2>Tipps</h2>
+    <ul>
+        <li>
+            <strong>Ereignisnamen sind frei wählbar</strong> — &ldquo;Abendessen&rdquo;,
+            &ldquo;der Bus&rdquo;, &ldquo;die Fähre&rdquo;: du bist nicht auf eine feste Liste beschränkt.
+        </li>
+        <li>
+            <strong>Jede Ansage beginnt mit dem Alexa-Erinnerungston</strong> — so stellt Alexa
+            geplante Sprache für Drittanbieter-Skills zu.
+        </li>
+    </ul>
+
+    <h2>Standardwerte</h2>
+    <p>
+        Ohne Anpassung: Ansagen <strong>60, 45, 30, 15 und 5</strong> Minuten vorher, plus eine
+        finale; Ereignisname &ldquo;Abfahrt&rdquo;; Text &ldquo;Noch {Minuten} — {Ereignis}.&rdquo;
+    </p>
+
+    <div class="footer">
+        <p>
+            Time To Something is an Alexa skill for spoken countdown announcements. This page is
+            informational and is not affiliated with Amazon. &ldquo;Alexa&rdquo; and
+            &ldquo;Echo&rdquo; are trademarks of Amazon.com, Inc.
+        </p>
+    </div>
+
+</body>
+</html>
